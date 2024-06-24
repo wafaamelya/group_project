@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GeorgeTown</title>
+<style>
+body {
+  font-family: Tahoma, sans-serif;
+  margin: 0;
+  background-color: #F7F9F2;
+}
+
+.header {
+  position: relative;
+  height: 650px; 
+  text-align: center;
+  background-image: url("image/georgetown1.jpg");
+  background-size: cover; 
+  background-position: bottom center;
+  background-attachment: fixed;
+  color: white;
+  font-family: Georgia, serif;
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.header h1 {
+  position: relative;
+  z-index: 1;
+}
+
+.content {
+  text-align: center;
+  color: black;
+  font-size: 20px;
+  font-family: Garamond, serif;
+  margin-bottom: 40px;
+}
+
+.content hr {
+  width: 50%;
+  margin: 20px auto;
+  border: none;
+  border-top: 2px solid black;
+}
+
+header {
+	color: Black;
+	padding: 1rem 0;
+	text-align: center;
+}
+
+.content {
+	padding: 2rem;
+	text-align: center;
+}
+
+.container {
+	width: 90%;
+	margin: 2rem auto;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 2rem;
+}
+
+.photo-card {
+	background-color: #dfb187;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.photo-card img {
+	width: 100%;
+	height: 70%;
+	object-fit: cover;
+}
+
+.description {
+	padding: 1rem;
+	height: 10%;
+	text-align: center;
+}
+
+.description h1 {
+	margin: 0;
+	font-size: 1.5rem;
+	color: #000000;
+	margin: 0.5rem 0 0;
+	text-align: center;
+}
+
+.description p {
+	margin: 0.5rem 0 0;
+	text-align: center;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>George Town</h1>
+</div>
+
+    <header>
+        <h1>George Town</h1>
+    </header>
+    </nav>
+    <div class="container" id="home">
+        <h1>Welcome to George Town, Pulau Pinang</h1>
+
+        <p>George Town is the colorful, multicultural capital of the Malaysian island of Penang. Once an important Straits of Malacca trading hub, the city is known for its British colonial buildings, Chinese shophouses, and mosques. Beyond the old town, George Town is a modern city with skyscrapers and shopping malls. Verdant Penang Hill, with hiking and a funicular railway, overlooks it all.</p>
+
+    </div>
+    <div class="container" id="home">
+         <div class="photo-card">
+              <img src="image/georgetown2.jpg" alt="Georgetown 2">
+              <div class="description">
+                   <h2>Peneng Street Art</h2>
+                   <p>The Peneng Street Art in George Town is one of the most attractive things in this UNESCO World Heritage Town. Penang street art gallery is beautified with a splash of color on streetside murals, captivating steel sculptures, wall painting and commercial art.</p>
+
+              </div>
+         </div>
+
+    <div class="photo-card">
+        <img src="image/georgetown1.jpg" alt="Georgetown 1">
+        <div class="description">
+                   <p>One of the most popular of the street art pieces we saw, Boy on a Motorbike by Ernest  Zacharevic, often had a lineup of visitors waiting for "a ride" on the motorbike that’s part of the installation. The main photo at the top of this story was taken in the morning when less motorbike and trishaw traffic was whizzing up the busy street where it’s found,  Lebuh Ah Quee.</p>
+        </div>
+    </div>
+</div>
+<footer>
+       <p>&copy; 2024 | Mdango Website. All Rights Reserved. Updated: June 24 | Requirement:Windows, Chrome, Microsoft, Firefox </p>
+</footer>
+</body>
+</html>

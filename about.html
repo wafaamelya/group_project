@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pulau Pangkor</title>
+<style>
+body {
+  font-family: Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #F7F9F2;
+}
+
+.header {
+  position: relative;
+  height: 650px; 
+  text-align: center;
+  background-image: url("image/header pp.jpg");
+  background-size: cover; 
+  background-position: bottom center;
+  background-attachment: fixed;
+  color: white;
+  font-family: Georgia, serif;
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.header h1 {
+  position: relative;
+  z-index: 1;
+}
+
+.content {
+  text-align: center;
+  color: black;
+  font-size: 20px;
+  font-family: Garamond, serif;
+  margin-bottom: 40px;
+}
+
+.content down {
+  padding: 2rem;
+  text-align: center;
+}
+
+.content hr {
+  width: 50%;
+  margin: 20px auto;
+  border: none;
+  border-top: 2px solid black;
+}
+
+.content down {
+  padding: 2rem;
+  text-align: center;
+}
+
+.container {
+  width: 90%;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.photo-card {
+  background-color: #dfb187;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+        
+.description {
+  padding: 1rem;
+}
+
+.description h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #000000;
+}
+.description p {
+  margin: 0.5rem 0 0;
+  text-align: justify;
+}
+
+/* New CSS for resizing video */
+.video-resize {
+  width: auto;
+  height: auto; /* Set your desired height */
+  max-width: 100%; /* Ensure the video does not overflow the container */
+}
+
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>PULAU PANGKOR</h1>
+</div>
+
+<div class="content">
+  <h1>About Pulau Pangkor</h1>
+  <hr>
+</div>
+
+    </nav>
+    <div class="container" id="home">
+        <h2>Welcome to Pulau Pangkor in Perak</h2>
+        <p style="font-size:17px;">Pulau Pangkor is a small island located off the west coast of Perak in Malaysia.</p>
+	<p style="font-size:17px;">Known for its beautiful beaches, vibrant fishing villages, and rich cultural heritage, it is a popular tourist destination </p>
+    </div>
+    <div class="container" id="home">
+	<div class="photo-card">
+		<img src="beach 1.jpg" alt="Place 1">
+		<div class="description">
+	    	</div>
+	</div>
+    	<div class="photo-card">
+		<img src="beach pp.jpg" alt="Place 2">
+		<div class="description">
+		</div>
+	</div>
+	<div class="photo-card">
+		<img src="sunset pp.jpg" alt="Place 3">
+		<div class="description">
+		</div>
+        </div>
+    </div>
+
+    <div class="container" id="videos">
+	<div class="photo-card">
+        <h2><center>Sunset in Teluk Nipah, Pulau Pangkor</center></h2>
+		<video class="video-resize" controls>
+                <source src="sunset vid.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        <h3><center>This the view in Pulau Pangkor</h3></center>
+	</div>
+    	<div class="photo-card">
+	<h2><center>Get to know about Pulau Pangkor</center></h2>
+		<div class="description">
+			<p><center>Pulau Pangkor spans approximately 18 square kilometers and is surrounded by the Straits of Malacca. The island has a tropical rainforest climate, with warm temperatures and high humidity throughout the year.</center></p>
+
+			<br>
+			<h3>Attractions and Activities</h3>
+			<p><b>Beaches</p></b>
+			<p>Pangkor is famous for its pristine beaches, including Teluk Nipah, Coral Beach, and Pasir Bogak. These beaches offer clear waters, white sand, and opportunities for swimming, snorkeling, and sunbathing.</p>
+
+			<p><b>Pangkor Laut Resort</p></b>
+			<p>A luxury resort located on a private island just off the coast of Pangkor, known for its exclusive amenities and natural beauty.</p>
+
+			<p><b>Wildlife and Nature</p></b>
+			<p>The island's interior is covered in lush rainforest, home to diverse flora and fauna. Visitors can explore jungle trails, observe hornbills, and enjoy the island's natural scenery.</p>
+
+			<p><b>Fishing Villages</p></b>
+			<p>Pangkor has several traditional fishing villages where visitors can experience the local lifestyle and try fresh seafood.</p>
+
+                        <p><b>Water Sports</p></b>
+			<p>Popular activities include kayaking, jet-skiing, and banana boat rides. Snorkeling and diving spots around the island offer views of vibrant coral reefs and marine life.</p>
+
+			<h3>Accessibility</h3>
+			<p>Pulau Pangkor is accessible by ferry from Lumut, a town on the mainland of Perak. The ferry ride takes about 30 to 40 minutes. There are also domestic flights to Pangkor Airport, primarily from Kuala Lumpur.</p>
+		</div>
+        </div>
+    </div>
+<footer>
+       <p>&copy; 2024 | Mdango Website. All Rights Reserved. Updated: June 24 | Requirement:Windows, Chrome, Microsoft, Firefox </p>
+</footer>
+</body>
+</html>

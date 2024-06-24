@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" type="text/css" href="css/style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+ {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+	margin: 0;
+	background-color: #FCF8E8;
+}
+
+.sidebar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 260px;
+	background: #E7EF9A;
+	transition: all 0.5s ease;
+	z-index: 100;
+}
+
+.sidebar.close {
+	width: 78px;
+}
+
+.sidebar .logo-details {
+       height: 60px;
+       width: 100%;
+       display: flex;
+       align-items: center;
+       padding: 0 15px;
+       background: #E7EF9A;
+       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar .logo-details i {
+	font-size: 30px;
+	color: black;
+	margin-right: 10px;
+}
+
+.sidebar .logo-details .logo_name {
+	font-size: 22px;
+	color: #fff;
+	font-weight: 600;
+	transition: 0.3s ease;
+	transition-delay: 0.1s;
+}
+
+.sidebar.close .logo-details .logo_name {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.sidebar .nav-links {
+	padding: 20px 0 150px 0;
+	overflow-y: auto;
+	height: calc(100% - 60px);
+}
+
+.sidebar .nav-links::-webkit-scrollbar {
+	display: none;
+}
+
+.sidebar .nav-links li {
+	position: relative;
+	list-style: none;
+	margin-bottom: 15px;
+}
+
+.sidebar .nav-links li:hover {
+	background: #DFEC5D;
+}
+
+.sidebar .nav-links li .icon-link {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.sidebar.close .nav-links li .icon-link {
+	display: block;
+}
+
+.sidebar .nav-links li i {
+	height: 50px;
+	font-size: 20px;
+	min-width: 50px;
+	text-align: center;
+	line-height: 50px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.sidebar .nav-links li.showMenu i.arrow {
+	transform: rotate(-180deg);
+}
+
+.sidebar.close .nav-links i.arrow {
+	display: none;
+}
+
+.sidebar .nav-links li a {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+}
+
+.sidebar .nav-links li a .link-name {
+	font-size: 18px;
+	font-weight: 400;
+	color: black;
+	transition: all 0.4s ease;
+}
+
+.sidebar.close .nav-links li a .link-name {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.sidebar .nav-links li .sub-menu {
+	padding: 6px 6px 14px 80px;
+	margin-top: -10px;
+	background: #1d1b31;
+	display: none;
+}
+
+.sidebar .nav-links li:hover .sub-menu {
+	display: block;
+}
+
+.sidebar .nav-links li .sub-menu a {
+	color: #fff;
+	font-size: 15px;
+	padding: 10px 15px;
+	display: block;
+	text-decoration: none;
+	transition: all 0.3s ease;
+}
+
+.sidebar .nav-links li .sub-menu a:hover {
+	background-color: #DFEC5D;
+}
+
+.home-section {
+	position: absolute;
+	top: 0;
+	left: 260px;
+	width: calc(100% - 260px);
+	background: #94B49F;
+	height: auto;
+	transition: all 0.5s ease;
+	padding: 12px;
+	text-align: center;
+	z-index: 100; /* Ensure the main content is behind the iframe */
+}
+
+.title h2 {
+	background-color: FCF8E8;
+	padding: 10px;
+}
+
+.title p {
+	background-color: FCF8E8;
+	padding: 10px;
+}
+
+.sidebar.close ~ .home-section {
+	left: 78px;
+	width: calc(100% - 78px);
+}
+
+.home-section .home-content {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	height: 60px;
+}
+
+.home-section .home-content .menu-icon {
+	font-size: 30px;
+	cursor: pointer;
+	color: #11101d;
+	margin-right: 15px;
+}
+
+.slideshow-container {
+	position: relative;
+	max-width: 1000px;
+	margin: auto;
+	width: 100%;
+	height: auto;
+}
+
+@media screen and (max-width: 960px) {
+       .sidebar {
+		width: 78px;
+       }
+
+       .sidebar.close .nav-links li .sub-menu {
+		left: 78px;
+       }
+
+       .sidebar.close .nav-links li:hover .sub-menu {
+		top: 0;
+		opacity: 1;
+		pointer-events: auto;
+       }
+
+       .sidebar.close .logo-details .logo_name {
+		opacity: 0;
+		pointer-events: none;
+       }
+
+       .sidebar.close ~ .home-section {
+		left: 78px;
+		width: calc(100% - 78px);
+       }
+   }
+
+@media screen and (max-width: 400px) {
+       .sidebar {
+		width: 240px;
+       }
+
+       .sidebar.close {
+		width: 78px;
+       }
+
+       .home-section {
+		left: 240px;
+		width: calc(100% - 240px);
+       }
+
+       .sidebar.close ~ .home-section {
+		left: 78px;
+		width: calc(100% - 78px);
+       }
+
+   }
+
+	.content-frame {
+		position: fixed;
+		left: 19%;
+		width: 85%;
+		height: 100%;
+		border: none;
+		display: none;
+		z-index: 101; 
+
+</style>
+</head>
+<body>
+
+   <div class="sidebar close">
+      <div class="logo-details">
+         <i class="fas fa-m"></i>
+         <span class="logo_name">Dango</span>
+      </div>
+
+      <ul class="nav-links">
+         <li>
+            <div class="icon-link">
+               <i class="fas fa-location-dot"></i>
+               <span class="link-name">Perak</span>
+               <i class='bx bxs-chevron-down arrow'></i>
+            </div>
+            <ul class="sub-menu">
+               <li><a href="ipoh.html" target="content-frame">Ipoh</a></li>
+               <li><a href="about.html" target="content-frame">Pulau Pangkor</a></li>
+               <li><a href="watersport.html" target="content-frame">WaterSport in Pulau Pangkor</a></li>
+               <li><a href="trip pp.html" target="content-frame">Travel to Pulau Pangkor</a></li>
+            </ul>
+         </li>
+
+         <li>
+            <div class="icon-link">
+               <i class="fas fa-location-dot"></i>
+               <span class="link-name">Kedah</span>
+               <i class='bx bxs-chevron-down arrow'></i>
+            </div>
+            <ul class="sub-menu">
+               <li><a href="bukit h.html" target="content-frame">Bukit Hash</a></li>
+               <li><a href="silverjubilee.html" target="content-frame">Taman Jubli Perak</a></li>
+               <li><a href="mountjerai.html" target="content-frame">Mount Jerai</a></li>
+               <li><a href="arkeologi.html" target="content-frame">Archaeolpgical Museum</a></li>
+            </ul>
+         </li>
+
+         <li>
+            <div class="icon-link">
+               <i class="fas fa-location-dot"></i>
+               <span class="link-name">Pulau Pinang</span>
+               <i class='bx bxs-chevron-down arrow'></i>
+            </div>
+            <ul class="sub-menu">
+               <li><a href="georgetown.html" target="content-frame">Georgetown</a></li>
+               <li><a href="tanjung bungah.html" target="content-frame">Tanjung Bungah</a></li>
+               <li><a href="hardrockH.html">Hard Rock Hotel</a></li>
+               <li><a href="ferringhi.html" target="content-frame">Batu Ferringhi</a></li>
+            </ul>
+         </li>
+
+         <li>
+            <div class="icon-link">
+               <i class="fas fa-location-dot"></i>
+               <span class="link-name">Pahang</span>
+               <i class='bx bxs-chevron-down arrow'></i>
+            </div>
+            <ul class="sub-menu">
+               <li><a href="tioman.html" target="content-frame">Tioman Island</a></li>
+               <li><a href="guide.html" target="content-frame">Guide to Tioman Island</a></li>
+            </ul>
+         </li>
+
+         <li>
+            <div class="icon-link">
+               <i class="fas fa-location-dot"></i>
+               <span class="link-name">Korea</span>
+               <i class='bx bxs-chevron-down arrow'></i>
+            </div>
+            <ul class="sub-menu">
+               <li><a href="korea.html" target="content-frame">Myeong-Dong</a></li>
+            </ul>
+         </li>
+      </ul>
+   </div>
+
+   <section class="home-section">
+       <div class="home-content">
+           <i class="fa-solid fa-bars" onclick="toggleSidebar()"></i>
+       </div>
+
+       <div class="title">
+           <h2>Interesting Places to go with family and friends</h2>
+       </div>
+
+       <div class="content">
+           <p>Are you looking for an ideal place to enjoy with family or friends? Explore our collection of beautiful photos and exciting videos of destinations around the world.</p>
+
+           <p>Looking for your next adventure? From serene beaches to tranquil gardens, find the perfect spot to create lasting memories with your loved ones. On this website, we are sharing some interesting places for you to visit in Perak, Kedah, Pulau Pinang, Pahang, and Korea.</p>
+       </div>
+
+       <div class="content">
+           <img src="bg.jpg" alt="Sunset" style="width: 100%; height: auto;">
+       </div>
+
+       <div class="title">
+           <h2>MDango Traveling</h2>
+       </div>
+       <div class="content">
+           <p>Welcome to MDango Traveling, your ultimate guide to exploring the world's most captivating destinations.</p>
+       </div>
+
+       <div class="title">
+           <h2>About Us</h2>
+       </div>
+       <div class="content">
+           <p>At MDango Traveling, we are passionate about discovering and sharing the hidden gems of travel destinations. Whether you're planning a family vacation, a romantic getaway, or a solo adventure, we're here to inspire and guide you.</p>
+       </div>
+
+       <div class="title">
+           <h2>Our Mission</h2>
+       </div>
+       <div class="content">
+           <p>Our mission is to provide you with curated travel tips, breathtaking photography, and insightful articles about destinations across the globe. We aim to make your travel experiences unforgettable and hassle-free.</p>
+       </div>
+
+       <div class="title">
+           <h2>Explore Our Features</h2>
+       </div>
+       <div class="content">
+           <p>Destination Guides: Discover detailed guides on places like Perak, Kedah, Pulau Pinang, Pahang, and Korea.
+           Travel Tips: Get expert tips on packing, budgeting, and planning your trip.
+           Photo Galleries: Immerse yourself in stunning visuals of serene beaches, historic landmarks, and vibrant cultures.
+           Video Tours: Watch captivating videos that bring destinations to life.</p>
+       </div>
+   </section>
+
+   <iframe name="content-frame" class="content-frame"></iframe>
+
+   <script>
+   let arrow = document.querySelectorAll(".arrow");
+   for (var i = 0; i < arrow.length; i++) {
+       arrow[i].addEventListener("click", (e)=>{
+           let arrowParent = e.target.parentElement.parentElement; //selecting main parent of arrow
+           arrowParent.classList.toggle("showMenu");
+       });
+   }
+   let sidebar = document.querySelector(".sidebar");
+   let sidebarBtn = document.querySelector(".fa-bars");
+   console.log(sidebarBtn);
+   sidebarBtn.addEventListener("click", ()=>{
+       sidebar.classList.toggle("close");
+   });
+
+   document.querySelectorAll('.sub-menu a').forEach(link => {
+       link.addEventListener('click', function(e) {
+           e.preventDefault();
+           let iframe = document.querySelector('.content-frame');
+           iframe.src = this.href;
+           iframe.style.display = 'block';
+       });
+   });
+   </script>
+
+</body>
+</html>

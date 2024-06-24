@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Archaeological Museum</title>
+<style>
+body {
+  font-family: Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #F7F9F2;
+}
+
+.header {
+  position: relative;
+  height: 650px; 
+  text-align: center;
+  background-image: url("image/arkeologi.jpg");
+  background-size: cover; 
+  background-position: bottom center;
+  background-attachment: fixed;
+  color: white;
+  font-family: Georgia, serif;
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.header h1 {
+  position: relative;
+  z-index: 1;
+}
+
+.content {
+  text-align: center;
+  color: black;
+  font-size: 20px;
+  font-family: Garamond, serif;
+  margin-bottom: 40px;
+}
+
+.content hr {
+  width: 50%;
+  margin: 20px auto;
+  border: none;
+  border-top: 2px solid black;
+}
+
+.about-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  gap: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.about-section h1 {
+  flex: 1;
+  text-align: left;
+}
+
+.about-section p {
+  flex: 2;
+  text-align: justify;
+  font-size: 17px;
+}
+
+.video-resize {
+  width: auto;
+  height: auto; 
+  max-width: 100%; 
+}
+
+.container {
+  width: 90%;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.photo-card {
+  background-color: #f7f2c2;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.photo-card img {
+  width: 100%;
+  height: auto%;
+  object-fit: cover;
+}
+
+.description {
+  padding: 1rem;
+}
+
+.description h2 {
+  margin: 0;
+  font-size: 1rem;
+  color: #000000;
+  text-align: center;
+}
+.description p {
+  margin: 0.5rem 0 0;
+  font-size: 1rem;
+  text-align: justify;
+}
+* {
+  box-sizing: border-box;
+}
+
+.row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+img {
+  margin-bottom: -4px;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.highlight {
+  background-color: #f0e68c; 
+  padding: 10px;
+  border-radius: 5px;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>BUJANG VALLEY ARCHAEOLOGICAL MUSEUM</h1>
+</div>
+
+<div class="content">
+  <h1>About Bujang Valley Archaeological Museum</h1>
+  <hr>
+</div>
+<div class="about-section">
+  <h1>Welcome to Bujang Valley Archaeological Museum in Merbok, Kedah</h1>
+  <p>Bujang Valley Archaeological Museum is near Sungai Batu, Bukit Batu Pahat, Merbok, Kedah. The Ministry of Information, Communication and Culture Malaysia administers the museum. This archaeological complex covers an area of ​​three square kilometers. It is located in an area of ​​palm oil plantations. 97 research sites are the key to unlocking the history of the country's early civilization. This museum displays the historical perspective of archaeology, anthropology, and sociology of Southeast Asia's high and old Malay community. This museum is located in the middle of the center of settlement, trade, and the development of the earliest civilization in the Malay Peninsula with monuments and inscribed stones over 1,900 years old found by a group of archaeologists from Universiti Sains Malaysia (USM). It later extended to the "Empire of SriVijaya". This museum complex holds various historical treasures and heirlooms that prove that Kedah is one of the oldest states in the region, which is believed to have existed since 110 AD. The Bujang Valley Archaeological Museum was built in 1978.</p>
+</div>
+<hr>
+
+<div class="content">
+  <div class="highlight">
+    <h2>The archaeology museum has two galleries and a dedicated area for temple collections</h2>
+  </div>
+  <hr>
+</div>
+<div class="container" id="home">
+  <div class="photo-card">
+    <img src="gallery 1.jpg" alt="Gallery 1">
+    <div class="description">
+	<h2>Gallery 1</h2>
+    </div>
+  </div>
+  <div class="photo-card">
+    <img src="candi stairs.jpg" alt="the stairs">
+    <div class="description">
+	<h2>Stairs to see the collection of temple architecture</h2>
+    </div>
+  </div>
+  <div class="photo-card">
+    <img src="gallery 2.jpg" alt="Gallery 2">
+    <div class="description">
+	<h2>Gallery 2</h2>
+    </div>
+  </div>
+</div>
+<hr>
+
+<div class="content">
+  <h2>The collection inside Gallery 2</h2>
+  <hr>
+</div>
+<center><p>You can click on the picture to see a detail look of the collection inside Gallery 2.</p></center>
+<div class="container" id="home">
+   <div class="row">
+      <div class="column">
+         <img src="g1.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+      </div>
+      <div class="column">
+         <img src="g2.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+      </div>
+      <div class="column">
+         <img src="g3.jpg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+      </div>
+      <div class="column">
+         <img src="g4.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+      </div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <span class="close cursor" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+
+             <div class="mySlides">
+                 <div class="numbertext">1 / 4</div>
+                 <img src="g1.jpg" style="width:100%">
+    	     </div>
+
+             <div class="mySlides">
+                 <div class="numbertext">2 / 4</div>
+                 <img src="g2.jpg" style="width:100%">
+             </div>
+
+             <div class="mySlides">
+                 <div class="numbertext">3 / 4</div>
+                 <img src="g3.jpg" style="width:100%">
+             </div>
+    
+             <div class="mySlides">
+                 <div class="numbertext">4 / 4</div>
+                 <img src="g4.jpg" style="width:100%">
+             </div>
+    
+             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+             <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+             <div class="caption-container">
+                <p id="caption"></p>
+             </div>
+
+
+             <div class="column">
+                 <img class="demo cursor" src="g1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Ivory">
+             </div>
+             <div class="column">
+                 <img class="demo cursor" src="g2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Plate">
+             </div>
+             <div class="column">
+                 <img class="demo cursor" src="g3.jpg" style="width:100%" onclick="currentSlide(3)" alt="The collection">
+             </div>
+             <div class="column">
+                 <img class="demo cursor" src="g4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Iron Ore">
+             </div>
+    </div>
+   </div>
+</div>
+<hr>
+
+<div class="content">
+  <div class="highlight">
+    <h2>The Bujang Valley Archaeological Museum has four temples on exhibit.</h2>
+  </div>
+  <hr>
+</div>
+<div class="container" id="home">
+  <div class="photo-card">
+    <img src="candi 4.jpg" alt="Candi 4">
+    <div class="description">
+	<h2>Bukit Batu Pahat Temple</h2>
+    </div>
+  </div>
+  <div class="photo-card">
+    <img src="candi 2.jpg" alt="Candi 2">
+    <div class="description">
+	<h2>Bendang Dalam Temple</h2>
+    </div>
+  </div>
+  <div class="photo-card">
+    <img src="candi 1.jpg" alt="Candi 1">
+    <div class="description">
+	<h2>Pengkalan Bujang Temple</h2>
+    </div>
+  </div>
+  <div class="photo-card">
+    <img src="candi 3.jpg" alt="Candi 3">
+    <div class="description">
+	<h2>Pendiat Temple</h2>
+    </div>
+  </div>
+</div>
+<hr>
+
+<script>
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+<footer>
+       <p>&copy; 2024 | Mdango Website. All Rights Reserved. Updated: June 24 | Requirement:Windows, Chrome, Microsoft, Firefox </p>
+</footer>
+</body>
+</html>

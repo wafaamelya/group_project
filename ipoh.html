@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ipoh</title>
+    <style>
+        body {
+            font-family: Tahoma, sans-serif;
+            margin: 0;
+            background-color: #FFFFFF;
+        }
+        .header {
+            position: relative;
+            height: 650px;
+            text-align: center;
+            background-image: url("image/photo_6323583468226855007_y.jpg");
+            background-size: cover;
+            background-position: bottom center;
+            background-attachment: fixed;
+            color: white;
+            font-family: Georgia, serif;
+            font-size: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+        .header h1 {
+            position: relative;
+            z-index: 1;
+        }
+        .content {
+            padding: 2rem;
+            text-align: center;
+        }
+        .container {
+            width: 90%;
+            margin: 2rem auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .photo-card {
+            background-color: #FA9A4A;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .photo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .description {
+            padding: 1rem;
+        }
+        .description h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #000000;
+        }
+        .description p {
+            margin: 0.5rem 0 0;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>IPOH</h1>
+    </header>
+    <div id="home" class="container">
+        <h2>Welcome to Ipoh</h2>
+        <p>Ipoh is the capital city of the state of Perak, Malaysia. Located in the Kinta Valley, Ipoh is renowned for its rich history, colonial architecture and vibrant food scene.</p>
+    </div>
+    <div id="home" class="container">
+        <div class="photo-card">
+            <img src="image/photo_6323583468226855002_y.jpg" alt="Sample Nature Photo 1">
+            <div class="description">
+                <h2>Ocean</h2>
+            </div>
+        </div>
+        <div class="photo-card">
+            <img src="image/photo_6323583468226855006_y.jpg" alt="Sample Nature Photo 2">
+            <div class="description">
+                <h2>Nature</h2>
+            </div>
+        </div>
+        <div class="photo-card">
+            <img src="image/photo_6323583468226855003_y.jpg" alt="Sample Nature Photo 3">
+            <div class="description">
+                <h2>Third</h2>
+            </div>
+        </div>
+    </div>
+    <div id="tips" class="content">
+        <h2>Historical Background</h2>
+        <p>Ipoh rose to prominence in the late 19th and early 20th centuries as a major tin mining center. The city's prosperity during this period led to the construction of many grand buildings and institutions.</p>
+        <p>The British colonial era left a significant architectural legacy in Ipoh, with many well-preserved buildings such as the Ipoh Railway Station, the Birch Memorial Clock Tower, and St. Michael's Institution.</p>
+        <h2>Cultural Highlights</h2>
+        <p>Ipoh is famous for its stunning cave temples, including Sam Poh Tong, Kek Lok Tong, and Perak Tong, which are set within limestone hills.</p>
+        <p>The city features vibrant street art, with murals depicting scenes from local life, adding a modern artistic touch to its historical streets.</p>
+    </div>
+    <div id="tips" class="container">
+        <div class="photo-card">
+            <h2><center>Natural Attractions</center></h2>
+            <div class="description">
+                <h4>Limestone Hills and Caves</h4>
+                <p>The landscape around Ipoh is dominated by dramatic limestone karst formations, which house a variety of caves and cave temples.</p>
+                <h4>Gua Tempurung</h4>
+                <p>One of the largest limestone caves in Peninsular Malaysia, known for its impressive stalactites and stalagmites.</p>
+            </div>
+        </div>
+        <div class="photo-card">
+            <h2><center>Food and Cuisine</center></h2>
+            <div class="description">
+                <h4>Ipoh White Coffee</h4>
+                <p>A unique local coffee drink made by roasting coffee beans with palm oil margarine and serving it with condensed milk. Ipoh is famous for this beverage.</p>
+                <h4>Local Delicacies</h4>
+                <p>Ipoh is well-known for its cuisine, including dishes such as Ipoh Hor Fun (flat rice noodles in a savory broth), Nga Choi Kai (bean sprout chicken), and a variety of dim sum.</p>
+            </div>
+        </div>
+        <div class="photo-card">
+            <h2><center>Transportation and Accessibility</center></h2>
+            <div class="description">
+                <p>Ipoh is well-connected by road and rail. The North-South Expressway links it to other major cities in Malaysia, and the Ipoh Railway Station provides regular train services, including the ETS (Electric Train Service) to Kuala Lumpur and other destinations.</p>
+            </div>
+        </div>
+    </div>
+
+<footer>
+       <p>&copy; 2024 | Mdango Website. All Rights Reserved. Updated: June 24 | Requirement:Windows, Chrome, Microsoft, Firefox </p>
+</footer>
+</body>
+</html>
